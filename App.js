@@ -9,6 +9,7 @@ import HistoryScreen from './pages/HistoryScreen';
 import DetailScreen from './pages/DetailScreen';
 import LoginScreen from './pages/LoginScreen';
 import AboutScreen from './pages/AboutScreen';
+import LocationScreen from './pages/LocationScreen';
 
 import { AuthProvider, AuthContext } from './context/AuthContext';
 
@@ -45,6 +46,8 @@ function MainTabs() {
             iconName = 'history';
           } else if (route.name === 'AboutTab') {
             iconName = 'info';
+          } else if (route.name === 'LocationTab') {
+            iconName = 'location-on';
           }
 
           return (
@@ -83,6 +86,16 @@ function MainTabs() {
         options={{
           headerShown: false,
           tabBarLabel: 'About'
+        }}
+      />
+
+      {/* Tambahan Location — dibenerin tanpa ubah struktur */}
+      <Tab.Screen
+        name="LocationTab"
+        component={LocationScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Lokasi'
         }}
       />
     </Tab.Navigator>
